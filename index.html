@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Weather App</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="src/style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Nova+Mono&family=Permanent+Marker&display=swap"
+      rel="stylesheet"
+    />
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+  </head>
+  <body>
+    <div class="container">
+      <div class="row">
+        <div class="col">
+          <h1>#</h1>
+          <br />
+          <h2 class="chosen-temp" id="chosen-temp">#</h2>
+          <div class="chosen-icon">🥵</div>
+          <div class="chosen-date" id="chosen-date">#</div>
+          <div class="chosen-forecast" id="chosen-forecast">#</div>
+        </div>
+        <div class="col-8">
+          <form class="city-lookup">
+            <input type="search" id="city" placeholder="Enter a city" />
+            <input type="submit" id="search-city" value="Search!" />
+            <button id="current-city-button">Current</button>
+          </form>
+          <h3>Good weather for reading a book 📖!</h3>
+          <ul>
+            <li class="details" id="humidity">#</li>
+            <li class="details" id="wind">#</li>
+          </ul>
+          <div class="row weektable">
+            <div class="col day">
+              <p id="day2">Tomorrow</p>
+              <p class="week-weather">☁️</p>
+              <p>74°F/23°C</p>
+            </div>
+            <div class="col day">
+              <p id="day3">Tuesday</p>
+              <p class="week-weather">🌧</p>
+              <p>62°F/17°C</p>
+            </div>
+            <div class="col day">
+              <p id="day4">Wednesday</p>
+              <p class="week-weather">🌧</p>
+              <p>69°F/21°C</p>
+            </div>
+            <div class="col day">
+              <p id="day5">Thursday</p>
+              <p class="week-weather">🌧</p>
+              <p>85°F/29°C</p>
+            </div>
+            <div class="col day">
+              <p id="day6">Friday</p>
+              <p class="week-weather">⛅️</p>
+              <p>82°F/28°C</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="src/script.js"></script>
+  </body>
+</html>
