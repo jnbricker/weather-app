@@ -44,6 +44,13 @@ function showTemperature(response) {
   let weatherElement = document.querySelector("#chosen-forecast");
   weatherElement.innerHTML = `${cityWeather}`;
 
+  let iconElement = document.querySelector("#icon");
+  iconElement.setAttribute(
+    "src",
+    `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
+  );
+  iconElement.setAttribute("alt", response.data.weather[0].description);
+
   let humidityElement = document.querySelector("#humidity");
   humidityElement.innerHTML = `Humidity: ${cityHumidity}%`;
 
