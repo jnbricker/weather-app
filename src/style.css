@@ -17,8 +17,10 @@ h1 {
   margin: 0;
 }
 
-h2 {
+strong {
   margin: 0;
+  font-size: 40px;
+  line-height: 1;
 }
 
 h3 {
@@ -35,6 +37,22 @@ div {
 }
 li {
   list-style: none;
+}
+
+.units {
+  position: relative;
+  font-size: 16px;
+  top: -18px;
+}
+
+.units .active {
+  color: rgb(33, 33, 33);
+  cursor: default;
+  text-decoration: none;
+}
+
+.units .active:hover {
+  text-decoration: none;
 }
 
 .details {

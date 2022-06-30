@@ -29,14 +29,15 @@ chosenDate.innerHTML = `${currentDay} ${currentMonth} ${currentDate} ${currentYe
 
 //show weather
 function showTemperature(response) {
-  let cityTemp = Math.round(response.data.main.temp);
+  celsiusTemp = response.data.main.temp;
+  let cityTemp = Math.round(celsiusTemp);
   let cityName = response.data.name;
   let cityWeather = response.data.weather[0].main;
   let cityHumidity = response.data.main.humidity;
   let cityWind = Math.round(response.data.wind.speed);
 
   let temperatureElement = document.querySelector("#chosen-temp");
-  temperatureElement.innerHTML = `${cityTemp}°C`;
+  temperatureElement.innerHTML = `${cityTemp}`;
 
   let cityElement = document.querySelector("h1");
   cityElement.innerHTML = `${cityName}`;
@@ -102,5 +103,32 @@ findCity.addEventListener("click", getCityName);
 
 let currentCity = document.querySelector("#current-city-button");
 currentCity.addEventListener("click", getCurrentCity);
+
+//convert temperature
+function showFahrenheitTemp(event) {
+  event.preventDefault();
+  let temperatureElement = document.querySelector("#chosen-temp");
+  //remove active class
+  celsiusLink.classList.remove("active");
+  fahrenheitLink.classList.add("active");
+  let fahrenheitTemp = (celsiusTemp * 9) / 5 + 32;
+  temperatureElement.innerHTML = Math.round(fahrenheitTemp);
+}
+
+function showCelsiusTemp(event) {
+  event.preventDefault();
+  celsiusLink.classList.add("active");
+  fahrenheitLink.classList.remove("active");
+  let temperatureElement = document.querySelector("#chosen-temp");
+  temperatureElement.innerHTML = Math.round(celsiusTemp);
+}
+
+let celsiusTemp = null;
+
+let fahrenheitLink = document.querySelector("#fahrenheit-link");
+fahrenheitLink.addEventListener("click", showFahrenheitTemp);
+
+let celsiusLink = document.querySelector("#celsius-link");
+celsiusLink.addEventListener("click", showCelsiusTemp);
 
 searchCity("Rome");
